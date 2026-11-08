@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandPulse - Paid Instagram & YouTube Brand Promotions App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0a0a0c',
+                        cardbg: '#141418',
+                        cardhover: '#1c1c24',
+                        neonred: '#ff3b30',
+                        neonorange: '#ff9500',
+                        accentglow: 'rgba(255, 59, 48, 0.25)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050507;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 24, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow {
+            box-shadow: 0 0 40px rgba(255, 59, 48, 0.4);
+        }
+        .cinematic-glow {
+            box-shadow: 0 0 25px rgba(255, 59, 48, 0.2), inset 0 0 15px rgba(255, 59, 48, 0.1);
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.06); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 5s infinite ease-in-out;
+        }
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: floatAnim 3.5s infinite ease-in-out;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 22s linear infinite;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 selection:bg-neonred selection:text-white">
+
+    <!-- Background Ambient Neon Glows -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-neonred rounded-full filter blur-[140px] opacity-15 pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-neonorange rounded-full filter blur-[140px] opacity-10 pointer-events-none"></div>
+
+    <!-- Top Sticky Navigation -->
+    <header class="sticky top-0 z-50 bg-darkbg/90 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-neonred to-neonorange flex items-center justify-center neon-glow animate-float">
+                    <i class="fa-solid fa-bolt text-lg text-white"></i>
+                </div>
+                <span class="text-xl font-black text-white tracking-wider">BRAND<span class="text-neonred">PULSE</span></span>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#features" class="hover:text-neonred transition">Features</a>
+                <a href="#demobrowser" class="hover:text-neonred transition">Chrome Demo</a>
+                <a href="#calculator" class="hover:text-neonred transition">Calculator</a>
+                <a href="#campaigns" class="hover:text-neonred transition">Campaigns</a>
+                <a href="#testimonials" class="hover:text-neonred transition">Reviews</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="bg-gradient-to-r from-neonred to-red-600 hover:from-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-neonred/30 transition duration-300 flex items-center space-x-2">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Download APK</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Banner Bar -->
+    <div class="bg-gradient-to-r from-neonred/20 via-cardbg to-neonorange/20 border-b border-white/5 py-2.5 px-4 overflow-hidden">
+        <div class="flex items-center space-x-2 text-neonred font-bold text-xs uppercase tracking-wider shrink-0 float-left mr-3 z-10 bg-darkbg px-2 py-0.5 rounded">
+            <i class="fa-solid fa-bullhorn animate-bounce"></i> <span>Live Updates:</span>
+        </div>
+        <div class="overflow-hidden whitespace-nowrap">
+            <div class="animate-marquee text-xs text-gray-200 font-medium">
+                🔥 Special Weekend Payout Bonus: Get +15% extra on all verified Instagram Reels submitted before Sunday midnight! | 🚀 Over ₹45L+ paid out to creators this month! | Instant UPI & Bank withdrawals active.
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-12 pb-20 px-4 sm:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="flex-1 space-y-6 text-center lg:text-left z-10">
+            <div class="inline-flex items-center space-x-2 bg-cardbg border border-neonred/40 px-3.5 py-1.5 rounded-full shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                <span class="text-xs font-semibold text-gray-200">Trusted by 25,000+ Instagram & YouTube Creators</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight">
+                Monetize Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonred via-red-500 to-neonorange">Social Presence</span> With Paid Deals
+            </h1>
+            
+            <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Connect your Instagram and YouTube channels, pick high-paying brand campaigns, upload promotional reels, and receive instant direct UPI payouts with zero hassle.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="w-full sm:w-auto bg-gradient-to-r from-neonred to-red-600 hover:from-red-600 text-white font-extrabold text-sm px-8 py-4 rounded-2xl shadow-xl shadow-neonred/40 transition duration-300 flex items-center justify-center space-x-3 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-android text-xl"></i>
+                    <span>Download Official App (APK)</span>
+                </a>
+                <a href="https://pramotionfree-wq.github.io/Pramotion/?ref=#BP-41188" target="_blank" class="w-full sm:w-auto glass-panel hover:bg-cardhover text-white font-semibold text-sm px-6 py-4 rounded-2xl border border-white/10 transition flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-chrome text-neonorange text-lg"></i>
+                    <span>Open Live Web App</span>
+                </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-3 gap-4 pt-6 max-w-md mx-auto lg:mx-0 border-t border-white/10">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-white">₹5,000</h3>
+                    <p class="text-[11px] text-gray-400 font-medium">Max per Promo</p>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-neonred">24 Hours</h3>
+                    <p class="text-[11px] text-gray-400 font-medium">Fast UPI Payouts</p>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-neonorange">100%</h3>
+                    <p class="text-[11px] text-gray-400 font-medium">Verified Brands</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero App Visual Mockup Preview -->
+        <div class="flex-1 relative flex justify-center z-10">
+            <div class="absolute inset-0 bg-gradient-to-r from-neonred/20 to-neonorange/20 rounded-full filter blur-3xl opacity-50"></div>
+            <div class="glass-panel p-4 rounded-[36px] border border-white/20 shadow-2xl relative w-[300px] sm:w-[340px] bg-[#0c0c10] cinematic-glow">
+                <div class="bg-cardbg rounded-[28px] p-4 space-y-4 border border-white/5">
+                    <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-neonred to-neonorange flex items-center justify-center text-white text-xs font-bold">BP</div>
+                            <span class="text-xs font-bold text-white">BrandPulse App</span>
+                        </div>
+                        <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-semibold">Live Feed</span>
+                    </div>
+
+                    <div class="bg-[#18181f] p-3 rounded-2xl border border-neonred/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center"><i class="fa-solid fa-wallet"></i></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">ZestMoney Pay</h4>
+                                    <p class="text-[9px] text-gray-400">Fintech Campaign</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-black text-green-400">₹1,200</span>
+                        </div>
+                        <div class="text-[10px] text-gray-300 bg-darkbg p-2 rounded-xl flex items-center justify-between">
+                            <span><i class="fa-solid fa-clapperboard text-neonred mr-1"></i> 1 Reel + 1 Story</span>
+                            <span class="text-neonred font-bold">Apply Now</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#18181f] p-3 rounded-2xl border border-neonorange/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center"><i class="fa-solid fa-gamepad"></i></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">WinZO Gaming Hub</h4>
+                                    <p class="text-[9px] text-gray-400">Gaming Promotion</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-black text-green-400">₹2,500</span>
+                        </div>
+                        <div class="text-[10px] text-gray-300 bg-darkbg p-2 rounded-xl flex items-center justify-between">
+                            <span><i class="fa-solid fa-clapperboard text-neonorange mr-1"></i> 2 Reels + Stories</span>
+                            <span class="text-neonorange font-bold">Apply Now</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-neonred/20 to-cardbg p-3.5 rounded-2xl border border-neonred/40 flex items-center justify-between">
+                        <div>
+                            <p class="text-[9px] text-gray-400 uppercase font-semibold">Creator Wallet Balance</p>
+                            <h4 class="text-base font-black text-white">₹14,850.00</h4>
+                        </div>
+                        <button class="bg-neonred text-white text-[10px] font-bold px-3 py-1.5 rounded-xl">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GOOGLE CHROME BROWSER MOCKUP SECTION ================= -->
+    <section id="demobrowser" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-3 mb-12">
+            <div class="inline-flex items-center space-x-2 bg-cardbg border border-neonorange/40 px-3.5 py-1.5 rounded-full shadow-lg">
+                <i class="fa-brands fa-chrome text-neonorange text-sm"></i>
+                <span class="text-xs font-semibold text-gray-200">Instant Browser Experience</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience BrandPulse Live in Chrome</h2>
+            <p class="text-sm text-gray-400 max-w-xl mx-auto">Access the promotion platform directly from any desktop browser without installation.</p>
+        </div>
+
+        <!-- Google Chrome Window Mockup -->
+        <div class="glass-panel rounded-3xl border border-white/10 shadow-2xl overflow-hidden max-w-5xl mx-auto bg-[#121216]">
+            <!-- Chrome Header Bar -->
+            <div class="bg-[#1a1a20] px-4 py-3 flex items-center justify-between border-b border-white/10">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <!-- URL Address Bar with Google Chrome Logo -->
+                <div class="flex items-center space-x-3 bg-[#0a0a0c] px-4 py-1.5 rounded-full border border-white/10 w-full max-w-xl">
+                    <i class="fa-brands fa-chrome text-neonorange text-sm"></i>
+                    <span class="text-xs text-gray-300 font-mono truncate">https://pramotionfree-wq.github.io/Pramotion/?ref=#BP-41188</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-400 text-xs">
+                    <i class="fa-solid fa-shield-halved text-green-400"></i>
+                    <span class="hidden sm:inline">Secure</span>
+                </div>
+            </div>
+
+            <!-- Chrome Viewport Body -->
+            <div class="p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-br from-cardbg to-[#0d0d12]">
+                <div class="space-y-4 max-w-lg text-center md:text-left">
+                    <span class="bg-neonorange/20 text-neonorange text-xs font-bold px-3 py-1 rounded-full uppercase">VIP Web Preview Mode</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Test drive the complete creator dashboard now</h3>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                        Explore live campaign lists, submit reels for verification, simulate direct UPI withdrawals, and manage your creator profile instantly.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://pramotionfree-wq.github.io/Pramotion/?ref=#BP-41188" target="_blank" class="bg-gradient-to-r from-neonorange to-amber-600 hover:from-amber-600 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-neonorange/30 transition inline-flex items-center space-x-2">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Launch Live Web App</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border border-neonorange/30 space-y-4 w-full md:w-80">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-neonorange/20 text-neonorange flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-user-shield"></i></div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Referral Code Applied</h4>
+                            <p class="text-[10px] text-neonorange font-mono">#BP-41188 (Bonus Active)</p>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-gray-300">
+                        Join with this referral link to instantly unlock priority campaign verification and a signup bonus.
+                    </p>
+                    <div class="bg-darkbg p-3 rounded-xl border border-white/5 text-center">
+                        <span class="text-xs text-green-400 font-bold">✓ SSL Secured Session</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EARNINGS CALCULATOR SECTION (NEW) ================= -->
+    <section id="calculator" class="py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+        <div class="glass-panel p-8 sm:p-12 rounded-[36px] border border-neonred/30 space-y-8 bg-gradient-to-br from-cardbg via-[#160e12] to-cardbg shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-neonred/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-neonred uppercase tracking-widest bg-neonred/10 px-3 py-1 rounded-full">Calculator</span>
+                <h2 class="text-3xl font-extrabold text-white">Estimate Your Monthly Promotion Earnings</h2>
+                <p class="text-xs sm:text-sm text-gray-400">Slide to calculate potential monthly revenue based on completed brand campaigns.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">Campaigns Completed Per Month:</span>
+                            <span id="calcCountVal" class="text-neonred font-bold text-sm">10 Campaigns</span>
+                        </div>
+                        <input type="range" id="calcRange" min="2" max="40" value="10" oninput="updateCalculator()" class="w-full accent-neonred cursor-pointer">
+                    </div>
+
+                    <div class="bg-darkbg p-4 rounded-2xl border border-white/10 space-y-2">
+                        <p class="text-[11px] text-gray-400 font-medium">Average Reward Per Campaign:</p>
+                        <h4 class="text-lg font-bold text-white">₹1,500 <span class="text-xs font-normal text-gray-500">(Fintech & Gaming)</span></h4>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-[#1b0d10] to-cardbg p-6 rounded-3xl border border-neonred/40 text-center space-y-3 cinematic-glow">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Estimated Monthly Payout</p>
+                    <h3 id="calcTotalEarnings" class="text-4xl sm:text-5xl font-black text-green-400">₹15,000</h3>
+                    <p class="text-[11px] text-gray-400">Credited directly to UPI / Bank within 24 hours</p>
+                    <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="mt-2 w-full bg-gradient-to-r from-neonred to-red-600 text-white font-bold text-xs py-3 rounded-xl shadow-md transition inline-block">
+                        Start Earning Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURE HIGHLIGHTS ================= -->
+    <section id="features" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-3 mb-16">
+            <span class="text-xs font-bold text-neonred uppercase tracking-widest bg-neonred/10 px-3 py-1 rounded-full">Why Creators Choose BrandPulse</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Engineered For Maximum Creator Earnings</h2>
+            <p class="text-sm text-gray-400 max-w-xl mx-auto">Everything you need to turn your social media reach into a steady, reliable source of income.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-neonred/50 transition duration-300 group">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-neonred to-red-600 flex items-center justify-center text-white text-xl shadow-lg shadow-neonred/30 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">Instant UPI & Bank Payouts</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    No waiting for weeks. Once your promotional reel is verified by our campaign managers, your earnings are credited instantly to your wallet for direct UPI or bank transfer.
+                </p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-neonorange/50 transition duration-300 group">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-neonorange to-amber-600 flex items-center justify-center text-white text-xl shadow-lg shadow-neonorange/30 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">Verified Brand Campaigns</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    Partner directly with top-tier fintech, gaming, e-commerce, and SaaS brands. Clear script guides, transparent deliverables, and guaranteed campaign approvals.
+                </p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-purple-500/50 transition duration-300 group">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-xl shadow-lg shadow-purple-600/30 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">24/7 Dedicated Support</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    Have questions about reel submission or payment status? Our support managers are available around the clock inside the app via live chat to assist you instantly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LIVE CAMPAIGN SHOWCASE ================= -->
+    <section id="campaigns" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row items-center justify-between mb-12">
+            <div class="space-y-2 text-center sm:text-left">
+                <span class="text-xs font-bold text-neonorange uppercase tracking-widest bg-neonorange/10 px-3 py-1 rounded-full">Active Opportunities</span>
+                <h2 class="text-3xl font-extrabold text-white">Live Brand Campaigns Available Now</h2>
+            </div>
+            <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="mt-4 sm:mt-0 text-xs font-bold text-neonred hover:underline flex items-center space-x-1">
+                <span>Download app to apply for all</span> <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-3xl space-y-4 border border-white/10 hover:border-neonred/50 transition">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-2xl bg-cardbg border border-white/10 flex items-center justify-center text-neonred font-bold text-lg"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">ZestMoney Pay</h4>
+                            <p class="text-xs text-gray-400">Fintech App Promotion</p>
+                        </div>
+                    </div>
+                    <span class="text-lg font-black text-green-400">₹1,200</span>
+                </div>
+                <div class="bg-cardbg p-3 rounded-xl border border-white/5 space-y-1 text-xs text-gray-300">
+                    <p class="flex items-center"><i class="fa-solid fa-tasks text-neonred mr-2"></i> Deliverables: 1 Reel + 1 Story</p>
+                    <p class="flex items-center"><i class="fa-solid fa-clock text-neonorange mr-2"></i> Approval: Instant (24h)</p>
+                </div>
+                <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="w-full bg-gradient-to-r from-neonred to-red-600 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center">
+                    Claim Campaign in App
+                </a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl space-y-4 border border-white/10 hover:border-neonorange/50 transition">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-2xl bg-cardbg border border-white/10 flex items-center justify-center text-neonorange font-bold text-lg"><i class="fa-solid fa-gamepad"></i></div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">WinZO Gaming Hub</h4>
+                            <p class="text-xs text-gray-400">Gaming & Esports</p>
+                        </div>
+                    </div>
+                    <span class="text-lg font-black text-green-400">₹2,500</span>
+                </div>
+                <div class="bg-cardbg p-3 rounded-xl border border-white/5 space-y-1 text-xs text-gray-300">
+                    <p class="flex items-center"><i class="fa-solid fa-tasks text-neonorange mr-2"></i> Deliverables: 2 Reels + Stories</p>
+                    <p class="flex items-center"><i class="fa-solid fa-clock text-neonorange mr-2"></i> Approval: Fast Review</p>
+                </div>
+                <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="w-full bg-gradient-to-r from-neonred to-red-600 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center">
+                    Claim Campaign in App
+                </a>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl space-y-4 border border-white/10 hover:border-purple-500/50 transition">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-2xl bg-cardbg border border-white/10 flex items-center justify-center text-purple-400 font-bold text-lg"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Groww Investment</h4>
+                            <p class="text-xs text-gray-400">Finance & Trading</p>
+                        </div>
+                    </div>
+                    <span class="text-lg font-black text-green-400">₹1,800</span>
+                </div>
+                <div class="bg-cardbg p-3 rounded-xl border border-white/5 space-y-1 text-xs text-gray-300">
+                    <p class="flex items-center"><i class="fa-solid fa-tasks text-purple-400 mr-2"></i> Deliverables: 1 Reel + Swipe Story</p>
+                    <p class="flex items-center"><i class="fa-solid fa-clock text-neonorange mr-2"></i> Approval: 24h Payout</p>
+                </div>
+                <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="w-full bg-gradient-to-r from-neonred to-red-600 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center">
+                    Claim Campaign in App
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= VIP CREATOR TESTIMONIALS ================= -->
+    <section id="testimonials" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-3 mb-16">
+            <span class="text-xs font-bold text-neonorange uppercase tracking-widest bg-neonorange/10 px-3 py-1 rounded-full">Success Stories</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Trusted By Top VIP Creators</h2>
+            <p class="text-sm text-gray-400 max-w-xl mx-auto">See how creators are generating thousands in monthly brand revenue with BrandPulse.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl cinematic-glow border border-neonred/30 space-y-4 relative overflow-hidden">
+                <div class="absolute -right-12 -bottom-12 w-32 h-32 bg-neonred/10 rounded-full blur-2xl"></div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Creator" class="w-12 h-12 rounded-full object-cover border-2 border-neonred">
+                        <div>
+                            <h4 class="text-sm font-bold text-white flex items-center">
+                                Rohan Verma <i class="fa-solid fa-circle-check text-blue-400 text-xs ml-1.5"></i>
+                            </h4>
+                            <p class="text-xs text-gray-400">@rohan_tech_vlogs • 180K Subscribers</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-emerald-400 font-bold">Earned ₹45,000+</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-300 italic leading-relaxed">
+                    "BrandPulse has completely transformed my YouTube channel monetization. Instant campaign approvals and direct UPI payout within 24 hours of reel verification!"
+                </p>
+                <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+                    <span><i class="fa-solid fa-video text-neonred mr-1"></i> 14 Campaigns Completed</span>
+                    <span class="text-neonred font-semibold">VIP Level 3 Creator</span>
+                </div>
+            </div>
+
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl cinematic-glow border border-neonorange/30 space-y-4 relative overflow-hidden">
+                <div class="absolute -right-12 -bottom-12 w-32 h-32 bg-neonorange/10 rounded-full blur-2xl"></div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150" alt="Creator" class="w-12 h-12 rounded-full object-cover border-2 border-neonorange">
+                        <div>
+                            <h4 class="text-sm font-bold text-white flex items-center">
+                                Priya Sharma <i class="fa-solid fa-circle-check text-blue-400 text-xs ml-1.5"></i>
+                            </h4>
+                            <p class="text-xs text-gray-400">@priya_creatives • 320K Followers</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-emerald-400 font-bold">Earned ₹78,000+</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-300 italic leading-relaxed">
+                    "The best part is that once you apply, you get clear script guides. The support manager on WhatsApp is super responsive. Highly recommended for Instagram creators!"
+                </p>
+                <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+                    <span><i class="fa-solid fa-video text-neonorange mr-1"></i> 22 Campaigns Completed</span>
+                    <span class="text-neonorange font-semibold">Elite VIP Creator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="py-20 px-4 sm:px-8 max-w-4xl mx-auto">
+        <div class="text-center space-y-3 mb-12">
+            <span class="text-xs font-bold text-neonred uppercase tracking-widest bg-neonred/10 px-3 py-1 rounded-full">Got Questions?</span>
+            <h2 class="text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                <h4 class="text-sm font-bold text-white flex items-center justify-between">
+                    <span>How do I receive my promotional earnings?</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-neonred"></i>
+                </h4>
+                <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                    Once your submitted Instagram Reel or YouTube Short is verified by our campaign managers, your wallet balance is instantly updated. You can withdraw anytime via UPI ID or direct bank transfer (IMPS). Minimum withdrawal is ₹500.
+                </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                <h4 class="text-sm font-bold text-white flex items-center justify-between">
+                    <span>Is the BrandPulse APK safe to install?</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-neonred"></i>
+                </h4>
+                <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                    Yes, 100% safe. BrandPulse uses secure Firebase Cloud Authentication and encrypted backend servers. You can also test drive all features directly in your browser using our live web link.
+                </p>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                <h4 class="text-sm font-bold text-white flex items-center justify-between">
+                    <span>How many followers do I need to start?</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-neonred"></i>
+                </h4>
+                <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                    We have campaigns suited for micro-creators starting from 5,000 followers as well as high-tier influencers. Everyone can register and start applying immediately!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= APP DOWNLOAD CTA SECTION ================= -->
+    <section id="appdownload" class="py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+        <div class="glass-panel p-8 sm:p-14 rounded-[36px] bg-gradient-to-br from-cardbg via-[#160e12] to-cardbg border border-neonred/40 text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-neonred/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-neonorange/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 space-y-6">
+                <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-neonred to-neonorange flex items-center justify-center mx-auto neon-glow animate-float">
+                    <i class="fa-solid fa-bolt text-3xl text-white"></i>
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                    Ready To Start Earning With <span class="text-neonred">BrandPulse</span>?
+                </h2>
+
+                <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
+                    Download the official Android APK now, or launch our live Chrome demo version to claim your first paid promotion campaign today!
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="w-full sm:w-auto bg-gradient-to-r from-neonred to-red-600 hover:from-red-600 text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-2xl shadow-xl shadow-neonred/40 transition duration-300 flex items-center justify-center space-x-3">
+                        <i class="fa-brands fa-android text-2xl"></i>
+                        <span>Download APK (Direct Link)</span>
+                    </a>
+                    <a href="https://pramotionfree-wq.github.io/Pramotion/?ref=#BP-41188" target="_blank" class="w-full sm:w-auto glass-panel hover:bg-cardhover text-white font-semibold text-sm px-8 py-4 rounded-2xl border border-white/10 transition flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-chrome text-neonorange text-xl"></i>
+                        <span>Open Web Demo</span>
+                    </a>
+                </div>
+
+                <p class="text-[11px] text-gray-400">
+                    Compatible with Android 8.0 & above • Secure Firebase Cloud Authenticated
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-darkbg border-t border-white/10 py-12 px-4 sm:px-8 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-neonred to-neonorange flex items-center justify-center text-white text-xs font-bold">BP</div>
+                <span class="text-sm font-bold text-white tracking-wider">BRANDPULSE</span>
+            </div>
+            
+            <p>© 2026 BrandPulse Inc. All rights reserved. Monetizing Instagram & YouTube creators worldwide.</p>
+
+            <div class="flex items-center space-x-6 text-gray-400">
+                <a href="#features" class="hover:text-neonred transition">Features</a>
+                <a href="#demobrowser" class="hover:text-neonred transition">Chrome Demo</a>
+                <a href="#campaigns" class="hover:text-neonred transition">Campaigns</a>
+                <a href="https://oqimtgbkifzbiqcwckki.supabase.co/storage/v1/object/public/apks/1794131436338-BRAND%20PULSE.apk" class="hover:text-neonred transition">Download APK</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calculator Logic Script -->
+    <script>
+        function updateCalculator() {
+            const count = document.getElementById('calcRange').value;
+            document.getElementById('calcCountVal').innerText = count + ' Campaigns';
+            const total = count * 1500;
+            document.getElementById('calcTotalEarnings').innerText = '₹' + total.toLocaleString('en-IN');
+        }
+    </script>
+</body>
+</html>
